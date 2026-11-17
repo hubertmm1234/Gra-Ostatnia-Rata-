@@ -1,17 +1,13 @@
-﻿namespace OstatniaRata.OstatniaRata.Core.Characters;
+﻿namespace OstatniaRata.OstatniaRata.Core.World;
 
-public class Monster
+public class GameCore
 {
-    
-    
-    
-    
-    public bool ChanceOfBeing(int chance)
+    public bool ChanceOfSpawnMonster(int chance)
     {
         bool is_Alive = false;
         Random random = new Random();
-        int x = random.Next(0, chance);
-        if (x > 3)
+        int x = random.Next(0, 10);
+        if (x < chance)
         {
             is_Alive = true;
         }
@@ -22,4 +18,3 @@ public class Monster
         return is_Alive;
     }
 }
-

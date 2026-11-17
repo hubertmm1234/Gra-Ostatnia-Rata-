@@ -2,24 +2,41 @@
 
 public class Monster
 {
-    
-    
-    
-    
-    public bool ChanceOfBeing(int chance)
+    protected int ExpierienceToGet;
+    public string[] Monsters = new[] { "Goblin ", "Zombi", "Umarly Rycerz" };
+
+    public int Power { get;protected set; }
+    public int Health { get; protected set; }
+    public string Name { get; protected set; }
+
+    public Monster()
     {
-        bool is_Alive = false;
-        Random random = new Random();
-        int x = random.Next(0, chance);
-        if (x > 3)
+        Random rnd =  new Random();
+        int type = rnd.Next(0, Monsters.Length);
+        this.Name = Monsters[type] += " ";
+
+        if (Name == "Goblin")
         {
-            is_Alive = true;
+            Power =  rnd.Next(2,5);
+            Health = rnd.Next(8,12);
         }
-        else
+        else if (Name == "Zombi")
         {
-            is_Alive = false;
+            Power = rnd.Next(3,6);
+            Health = rnd.Next(9,12);
         }
-        return is_Alive;
+        else if (Name == "Umarly Rycerz")
+        {
+            Power = rnd.Next(5,10);
+            Health = rnd.Next(12,16);
+        }
+        
     }
+    
+   
+    
+
+
+
 }
 
